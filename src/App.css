@@ -1,0 +1,22 @@
+.wishMessage{
+  margin-right: 10px;
+  margin-top: 15px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px black;
+  font-weight: bolder;
+  color: white;
+  border: none;
+}
+
+.bg-danger:hover{
+  background: linear-gradient(180deg, black, red);
+}
+
+.bg-warning:hover{
+  background: linear-gradient(180deg, black, orange);
+}
+
+.bg-success:hover{
+  background: linear-gradient(180deg, black, limegreen);
+}
