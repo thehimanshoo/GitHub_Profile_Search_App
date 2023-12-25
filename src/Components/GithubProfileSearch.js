@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import GithubProfile from "./GithubProfile";
 import GithubRepos from "./GithubRepos";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as GithubProfileActions from '../redux/GithubProfile/githubProfile.actions';
 import * as GithubProfileReducer from '../redux/GithubProfile/githubProfile.reducer';
 
 const GithubProfileSearch = () => {
 
     let [state, setLocal] = useState({                          //state =  {user : ''}
-        userName : '',
-        users : {},
-        repos : []
+        userName: '',
+        users: {},
+        repos: []
     });
 
     // Fetching Data to the REDUX Store
@@ -26,25 +26,25 @@ const GithubProfileSearch = () => {
     const GitProfileInfo = useSelector((state) => {
         return state[GithubProfileReducer.githubProfileFeatureKey];
     });
-    const {users, repos} = GitProfileInfo;
+    const { users, repos } = GitProfileInfo;
 
-    return(
+    return (
         <React.Fragment>
-            {/*<pre>{JSON.stringify(users)}</pre>*/}
-            {/*<pre>{JSON.stringify(repos)}</pre>*/}
+            {/* <pre>{JSON.stringify(users)}</pre> */}
+            {/* <pre>{JSON.stringify(repos)}</pre> */}
             <div className="container mt-3">
                 <div className="row">
                     <div className="col">
                         <div className="card">
-                            <div className="card-header bg-danger text-white">
+                            <div className="card-header bg-danger text-white" style={{ textAlign: "center" }}>
                                 <p className="h3 font-weight-bold font-italic">Github Profile Search App</p>
                             </div>
                             <div className="card-body bg-light">
 
                                 <form action="" className="form-inline">
                                     <div className="form-group d-flex justify-content-between">
-                                        <input onChange={(e) => {setLocal({...state, userName: e.target.value})}} type="search" size="30" className="form-control" placeholder="Enter Github User Name"/>
-                                        <input onClick={ClickSearchButton} type="submit" value="Search" className="btn btn-danger btn-sm" style={{marginLeft : '8px', padding : '0 20px'}}/>
+                                        <input onChange={(e) => { setLocal({ ...state, userName: e.target.value }) }} type="search" size="30" className="form-control" placeholder="Enter Github User Name" />
+                                        <input onClick={ClickSearchButton} type="submit" value="Search" className="btn btn-danger btn-sm" style={{ marginLeft: '8px', padding: '0 20px' }} />
                                     </div>
                                 </form>
 
@@ -56,9 +56,9 @@ const GithubProfileSearch = () => {
                     <div className="col">
                         {
                             Object.keys(users).length > 0 ?
-                            <React.Fragment>
-                                <GithubProfile/>
-                            </React.Fragment> : null
+                                <React.Fragment>
+                                    <GithubProfile />
+                                </React.Fragment> : null
                         }
                     </div>
                 </div>
@@ -67,7 +67,7 @@ const GithubProfileSearch = () => {
                         {
                             repos.length > 0 &&
                             <React.Fragment>
-                                <GithubRepos/>
+                                <GithubRepos />
                             </React.Fragment>
                         }
                     </div>

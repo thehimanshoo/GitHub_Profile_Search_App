@@ -12,7 +12,7 @@ const GithubRepos = () => {
 
     return (
         <React.Fragment>
-            <div className="card mt-3">
+            <div className="card mt-3" id="wrapper">
                 <div className="card-header bg-warning text-center text-white">
                     <p className="h4 font-weight-bold font-italic">Your Repository</p>
                 </div>
@@ -23,11 +23,11 @@ const GithubRepos = () => {
                                 return(
                                     <li className="list-group-item">
                                         <div className="d-flex justify-content-between">
-                                                <span className="h4 font-weight-bold font-italic">
+                                            <div className="col-5 h4 font-weight-bold font-italic">
                                                 <a className='text-decoration-none' href={repo.html_url} target="_blank">{repo.name}</a>
-                                            </span>
+                                            </div>
                                             <small className="badge bg-success">{repo.stargazers_count} Stars</small>
-                                            <small className="badge bg-info">{repo.watchers} Watchers</small>
+                                            <small className="badge bg-danger">{repo.watchers} Watchers</small>
                                         </div>
                                     </li>
                                 )

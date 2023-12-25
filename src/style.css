@@ -1,32 +1,47 @@
 /*   My Customs styles    */
 
 
-.btn-primary , .bg-primary{
+.btn-primary,
+.bg-primary {
     background: linear-gradient(45deg, black, blueviolet);
 }
-.btn-secondary , .bg-secondary{
+
+.btn-secondary,
+.bg-secondary {
     background: linear-gradient(45deg, black, purple);
 }
-.btn-success , .bg-success{
+
+.btn-success,
+.bg-success {
     background: linear-gradient(45deg, black, limegreen);
 }
-.btn-info , .bg-info{
+
+.btn-info,
+.bg-info {
     background: linear-gradient(45deg, black, lightblue);
 }
-.btn-warning , .bg-warning{
+
+.btn-warning,
+.bg-warning {
     background: linear-gradient(45deg, black, orange);
 }
-.btn-danger , .bg-danger{
+
+.btn-danger,
+.bg-danger {
     background: linear-gradient(45deg, black, red);
 }
-.btn-light , .bg-light{
-    background: linear-gradient(45deg, darkgray,darkgrey);
+
+.btn-light,
+.bg-light {
+    background: linear-gradient(45deg, darkgray, darkgrey);
 }
-.btn-dark , .bg-dark{
+
+.btn-dark,
+.bg-dark {
     background: linear-gradient(45deg, black, darkslategray);
 }
 
-.card-header{
+.card-header {
     text-shadow: 0 2px 3px black;
 }
 
@@ -34,11 +49,11 @@ Button:hover {
     background: rgb(208, 208, 208);
 }
 
-.badge{
+.badge {
     font-size: 25px;
 }
 
-.submitButton{
+.submitButton {
     background: blue;
     color: white;
     font-weight: bold;
@@ -48,17 +63,115 @@ Button:hover {
 }
 
 .deleteButton:hover {
-    background: -moz-linear-gradient(45deg, black , yellow);
+    background: -moz-linear-gradient(45deg, black, yellow);
     cursor: pointer;
 }
 
 .editButton:hover {
-    background: -moz-linear-gradient(45deg, black , blue);
+    background: -moz-linear-gradient(45deg, black, blue);
     cursor: pointer;
 }
 
-.btn-sm:hover{
-    background: linear-gradient(45deg, black , lightskyblue, lightgreen);
+.btn-sm:hover {
+    background: linear-gradient(45deg, black, lightskyblue, lightgreen);
     color: #282c34;
     box-shadow: 1px 1px 2px black;
 }
+
+;
+
+/* Toggler Css Design */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, ".SFNSText-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+.toggle {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+}
+
+.toggle-switch {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 64px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+}
+
+.toggle-switch:before,
+.toggle-switch:after {
+    content: "";
+}
+
+.toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+}
+
+.toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background: #56c080;
+}
+
+.toggle-checkbox:checked+.toggle-switch:before {
+    left: 37px;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+.toggle-label {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+};
+
+/* dark-mode.css */
+
+:root {
+    --background-color: white;
+    --text-color: black;
+  }
+  
+  body.dark-mode {
+    --background-color: #cbc4c4;
+    --text-color: white;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .dark-mode{
+    background-color: black;     /* #b9cce0 */
+    color: white;
+  };
+
+ 

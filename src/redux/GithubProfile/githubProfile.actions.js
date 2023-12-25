@@ -11,20 +11,20 @@ export const FETCH_GITHUB_REPOS_FAILURE = 'FETCH_GITHUB_REPOS_FAILURE';
 
 // Real Action for Profile
 export const fetchUserProfile = (githubUsername) => {
-  return async (dispatch) => {
-
-      try{
-          dispatch({type : FETCH_GITHUB_PROFILE_REQUEST});
-          const dataURL = `https://api.github.com/users/${githubUsername}?client_id=${CLIENT_ID} & client_secrets=${CLIENT_SECRETS}`;
-          const response = await Axios.get(dataURL);
-          dispatch({type : FETCH_GITHUB_PROFILE_SUCCESS, payload : response.data});
-          console.log(response.data , 'fjhwufbsdjhfbguay');
-      }
-      catch (error) {
-          dispatch({type : FETCH_GITHUB_PROFILE_FAILURE, payload : error})
-      }
+    return async (dispatch) => {
+  
+        try{
+            dispatch({type : FETCH_GITHUB_PROFILE_REQUEST});
+            const dataURL = `https://api.github.com/users/${githubUsername}?client_id=${CLIENT_ID} & client_secrets=${CLIENT_SECRETS}`;
+            const response = await Axios.get(dataURL);
+            dispatch({type : FETCH_GITHUB_PROFILE_SUCCESS, payload : response.data});
+            console.log(response.data , 'fjhwufbsdjhfbguay');
+        }
+        catch (error) {
+            dispatch({type : FETCH_GITHUB_PROFILE_FAILURE, payload : error})
+        }
+    };
   };
-};
 
 // Real Action for Repos
 export const fetchUserRepos = (githubUsername) => {
